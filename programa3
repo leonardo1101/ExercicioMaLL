@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "Irei realizar verificações no sistema , posso prosseguir ? [sim/nao]"
+read res
+
+test "$res" = nao && exit
+
+echo "Data e Horário:"
+dataHorario=$(date)
+echo $dataHorario
+echo
+
+echo "Uso do disco:"
+usoDisco=$(df)
+echo $usoDisco
+echo
+
+echo "Usuarios conectados:"
+usuarios=$(w)
+echo $usuarios
+echo 
+
+unset dataHorario
+unset usoDisco
+unset usuarios
